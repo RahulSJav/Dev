@@ -14,9 +14,12 @@ client = Groq(api_key=os.environ.get("GROQ_API_KEY"))
 st.subheader("Enter the System Prompt")
 system_prompt = st.text_area('Type here...')
 
-# Provide the model
-st.subheader("Provide the Model")
-model_input = st.text_input('Type here...')
+# Dropdown for model input
+model_input = st.selectbox(
+    'Select the model:',
+    ['gpt-3.5-turbo-0125', 'gpt-3.5-turbo', 'gpt-4o-mini']
+)
+
 
 # Initialize error flag
 error_message = ""
